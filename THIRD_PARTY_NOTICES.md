@@ -15,13 +15,15 @@ keep the two in step.
 | pixelfx (the pixel effects, baked to sprite sheets by `tools/import_pixelfx.py`) | Patch (patch.gg); parts adapted from Hugo Duprez (Sprite Fusion) and Hollow Crown (rehan-remade) | MIT, © 2026 each | `assets/sprites/pixelfx/` |
 | webrtc-native and its libraries | Godot Engine and others | see `addons/webrtc_native/LICENSE.*` | desktop builds only (not in the web build) |
 | Noto Sans Thai, Noto Sans Symbols | The Noto Project Authors | SIL Open Font License 1.1 (`assets/fonts/OFL.txt`) | `assets/fonts/` |
+| Press Start 2P (the arcade menus' pixel font; the web loading page loads it from Google Fonts) | The Press Start 2P Project Authors (CodeMan38) | SIL Open Font License 1.1 (`assets/fonts/PressStart2P-OFL.txt`) | `assets/fonts/PressStart2P-Regular.ttf` |
 | Music: the jingles (2) | MintoDog | CC0 1.0 (`assets/audio/music/CREDITS.md`) | `assets/audio/music/` |
 | Music: the main track (`stage.ogg`) | alex-morgan (Pixabay) | Pixabay Content License (`assets/audio/music/CREDITS.md`) | `assets/audio/music/` |
 | Music: the boss fight (`boss.ogg`) | u_98a917e4i7 (Pixabay) | Pixabay Content License (`assets/audio/music/CREDITS.md`) | `assets/audio/music/` |
 | Monsters' sprites: Shella the snail, the dragon fish, the Totem Monster (from Monster Battlegrounds) | Wouter van Ham (art, code and design of Monster Battlegrounds) | used with the author's permission (`assets/sprites/monsters/CREDITS.md`) | `assets/sprites/monsters/` |
 | Recorded sound effects (5: the jump grunt, the death scream, the dragon's roar, fire and death) | Pixabay uploaders | Pixabay Content License (`art_src/sfx/CREDITS.md`) | cut into `assets/audio/sfx/` |
 | Sound effects (29: blades, hits, parries, dashes, landings, the dragon's growl / wings / slam, the bell, items, UI; `tools/make_sfx_set.py` `ONIKURA`) from the Onikura demo | Onikura's makers (Kazan Games) | used with the makers' permission (`art_src/sfx/CREDITS.md`) | cut into `assets/audio/sfx/` |
-| Sound effects (15: the laser gunner's guns; the Thai warlock's talismans, levitation and summoning, and her spirit tiger; `tools/make_sfx_set.py` `BLADE_ASSAULT`) from Blade Assault | Team Suneat | **permission not yet confirmed**: get it before any public release (`art_src/sfx/CREDITS.md`) | cut into `assets/audio/sfx/` |
+| Sound effects (24: the laser gunner's guns; the Thai warlock's talismans, levitation and summoning, and her spirit tiger; the menus' `ui_*` sounds; the spring pads; `tools/make_sfx_set.py` `BLADE_ASSAULT`) from Blade Assault | Team Suneat | **permission not yet confirmed**: get it before any public release (`art_src/sfx/CREDITS.md`) | cut into `assets/audio/sfx/` |
+| Menu music "NeonCity_Planetboom" from Blade Assault | Team Suneat | **permission not yet confirmed**: get it before any public release (`assets/audio/music/CREDITS.md`) | `assets/audio/music/menu.ogg` |
 | The Muay Thai fighter's voice (8 short shouts, `muay_*`) | generated with ElevenLabs text to speech (voice "Jessica", eleven_v3) on the project owner's account | ElevenLabs terms for generated audio (`art_src/sfx/CREDITS.md`) | cut into `assets/audio/sfx/` by `tools/make_muay_voice.py` |
 
 The MIT licence of Godot Engine:
