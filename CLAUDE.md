@@ -2,6 +2,10 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Language
+
+Reply to the user in Thai (ภาษาไทย). Code, file names, commit messages and technical identifiers stay in English.
+
 ## What this repository is
 
 This is the **GitHub Pages deployment target** for the web build of *UNBROKEN · Shadow Within*, a
