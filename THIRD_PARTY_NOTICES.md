@@ -10,6 +10,7 @@ keep the two in step.
 | Godot Engine 4.7 | Juan Linietsky, Ariel Manzur and contributors | MIT (full text: in game, `Engine.get_license_text()`) | the engine (`index.wasm`, `index.js`) |
 | Godot third-party components | various (FreeType, HarfBuzz, ...) | various (in game: `Engine.get_copyright_info()`) | the engine |
 | netfox, netfox.internals | Gálffy Tamás | MIT (`addons/netfox/LICENSE`) | `addons/netfox*` |
+| Godot Jev (community client for TypeSafe AI's Jev API; not affiliated with TypeSafe) | AlvianEka | MIT (`addons/godot_jev/LICENSE`) | `addons/godot_jev` |
 | Effekseer for Godot 4 (the effects runtime) | Effekseer Project | MIT (`addons/effekseer/LICENSE`) | `addons/effekseer/` (Windows and web builds) |
 | Effekseer sample effects: Light (tktk), PowerUp (NextSoft) | their authors, shipped with Effekseer 1.80.6 | free to use and remodel in games made with Effekseer (the Effekseer readme) | `assets/vfx/effekseer/` |
 | pixelfx (the pixel effects, baked to sprite sheets by `tools/import_pixelfx.py`) | Patch (patch.gg); parts adapted from Hugo Duprez (Sprite Fusion) and Hollow Crown (rehan-remade) | MIT, © 2026 each | `assets/sprites/pixelfx/` |
