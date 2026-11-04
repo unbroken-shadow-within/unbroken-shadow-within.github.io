@@ -234,9 +234,57 @@ body {
 			<div class="corner credit">CREDIT 00 &nbsp; &copy; 2026 USW-GAMETECH</div>
 		</div>
 
+		<script>
+// The render resolution's cap (2026-11-04, the user: on a big screen the game
+// stuttered). Godot draws the canvas at the window's size x devicePixelRatio,
+// so a 4K screen made it fill 8 million pixels a frame. tools/patch_web_build.py
+// makes Godot's getPixelRatio ask uswRender.ratio(dpr): the canvas is drawn at
+// most at LEVELS[level] lines (as many pixels as 16:9 at that height) and the
+// browser stretches it over the page. RenderScale (scripts/ui/render_scale.gd)
+// moves the level: down when frames come late and the lower one helps, up
+// after a smooth stretch. ?res=full|1440|1080|900|720 fixes it (no adapting).
+window.uswRender = (function () {
+	const LEVELS = [0, 1440, 1080, 900, 720]; // 0 = the screen's own pixels
+	const KEY = 'usw_res';
+	const NAMES = {full: 0, native: 0, 1440: 1, 1080: 2, 900: 3, 720: 4};
+	const touch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+	let level = touch ? 3 : 2;
+	let forced = false;
+	const asked = new URLSearchParams(location.search).get('res');
+	if (asked !== null && asked in NAMES) {
+		level = NAMES[asked];
+		forced = true;
+	} else {
+		try {
+			const saved = parseInt(localStorage.getItem(KEY), 10);
+			if (saved >= 0 && saved < LEVELS.length) level = saved;
+		} catch (e) {}
+	}
+	let last = 1;
+	return {
+		levels: LEVELS,
+		ratio(dpr) {
+			const lines = LEVELS[level];
+			if (!lines) return (last = dpr);
+			const area = Math.max(window.innerWidth * window.innerHeight, 1);
+			return (last = Math.min(dpr, Math.sqrt(lines * lines * 16 / 9 / area)));
+		},
+		set(i) {
+			if (forced || i < 0 || i >= LEVELS.length) return;
+			level = i;
+			try { localStorage.setItem(KEY, String(i)); } catch (e) {}
+		},
+		info() {
+			const c = document.querySelector('canvas');
+			return JSON.stringify({level: level, forced: forced, lines: LEVELS[level], count: LEVELS.length,
+				dpr: window.devicePixelRatio || 1, ratio: last, canvas: c ? [c.width, c.height] : [0, 0]});
+		},
+	};
+})();
+		</script>
 		<script src="index.js"></script>
 		<script>
-const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":67952376,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":68124772,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
 const GODOT_THREADS_ENABLED = false;
 const engine = new Engine(GODOT_CONFIG);
 
