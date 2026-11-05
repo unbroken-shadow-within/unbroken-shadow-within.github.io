@@ -13,6 +13,14 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
 		<title>UNBROKEN · Shadow Within</title>
+		<!-- Added to the home screen it opens as an app, the whole screen its own (2026-11-05): web/ by tools/make_web_app.py, at the Pages root. -->
+		<link rel="manifest" href="/manifest.webmanifest">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-title" content="UNBROKEN">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="theme-color" content="#0b0716">
 		<!-- The link's preview on Facebook / LINE / X (2026-11-05): web/og.jpg by tools/make_share_image.py, copied to the Pages root by tools/deploy_web.sh. -->
 		<meta name="description" content="ล้มแล้วลุก สู้ไม่ถอย แม้ศัตรูคือเงาของตัวเอง เกมแอ็กชันต่อสู้พิกเซล 2D นักสู้ไทย 5 คน ดวลกับ CPU หรือเพื่อนออนไลน์ เล่นฟรีบนเบราว์เซอร์">
 		<meta property="og:type" content="website">
@@ -301,7 +309,7 @@ window.uswRender = (function () {
 		</script>
 		<script src="index.js"></script>
 		<script>
-const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":68928384,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":68930448,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
 const GODOT_THREADS_ENABLED = false;
 const engine = new Engine(GODOT_CONFIG);
 
