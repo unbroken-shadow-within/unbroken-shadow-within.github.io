@@ -12,6 +12,8 @@ keep the two in step.
 | netfox, netfox.internals | Gálffy Tamás | MIT (`addons/netfox/LICENSE`) | `addons/netfox*` |
 | Godot Jev (community client for TypeSafe AI's Jev API; not affiliated with TypeSafe) | AlvianEka | MIT (`addons/godot_jev/LICENSE`) | `addons/godot_jev` |
 | Aura Autopilot Godot addon (a playtesting tool for the editor and local runs; not in the game's builds) | RamenVR (Aura) | Apache-2.0 (github.com/ramenvr/autopilot); its bundled fonts SIL OFL 1.1 (`addons/autopilot/fonts/`) | `addons/autopilot` |
+| godot-agent-harness (dev tools: `tools/shot.sh`, `tools/godot/capture.gd`, the import check in `tools/test.sh`; not in the game's builds) | caiizilaz | MIT (`docs/engine-reference/LICENSE-godot-agent-harness`) | `tools/` |
+| Godot engine reference notes (4.4 to 4.7 API changes, for the coding agents; not in the game's builds) | Donchitos (Claude-Code-Game-Studios) | MIT (`docs/engine-reference/LICENSE-claude-code-game-studios`) | `docs/engine-reference/` |
 | Effekseer for Godot 4 (the effects runtime) | Effekseer Project | MIT (`addons/effekseer/LICENSE`) | `addons/effekseer/` (Windows and web builds) |
 | Effekseer sample effects: Light (tktk), PowerUp (NextSoft) | their authors, shipped with Effekseer 1.80.6 | free to use and remodel in games made with Effekseer (the Effekseer readme) | `assets/vfx/effekseer/` |
 | pixelfx (the pixel effects, baked to sprite sheets by `tools/import_pixelfx.py`) | Patch (patch.gg); parts adapted from Hugo Duprez (Sprite Fusion) and Hollow Crown (rehan-remade) | MIT, © 2026 each | `assets/sprites/pixelfx/` |
