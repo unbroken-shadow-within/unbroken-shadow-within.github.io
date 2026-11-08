@@ -16,6 +16,7 @@ keep the two in step.
 | Godot engine reference notes (4.4 to 4.7 API changes, for the coding agents; not in the game's builds) | Donchitos (Claude-Code-Game-Studios) | MIT (`docs/engine-reference/LICENSE-claude-code-game-studios`) | `docs/engine-reference/` |
 | Effekseer for Godot 4 (the effects runtime) | Effekseer Project | MIT (`addons/effekseer/LICENSE`) | `addons/effekseer/` (Windows and web builds) |
 | Effekseer sample effects: Light (tktk), PowerUp (NextSoft) | their authors, shipped with Effekseer 1.80.6 | free to use and remodel in games made with Effekseer (the Effekseer readme) | `assets/vfx/effekseer/` |
+| godot-snake2d (the Naga boss's serpent body: its SnakeBody2D's steering, following chain, unbend and wave, ported into `scripts/moba/naga_serpent.gd`) | DwellerComplex (Crumblebit) | MIT, © 2025 (`scripts/moba/LICENSE-godot-snake2d.txt`) | `scripts/moba/naga_serpent.gd` |
 | pixelfx (the pixel effects, baked to sprite sheets by `tools/import_pixelfx.py`) | Patch (patch.gg); parts adapted from Hugo Duprez (Sprite Fusion) and Hollow Crown (rehan-remade) | MIT, © 2026 each | `assets/sprites/pixelfx/` |
 | webrtc-native and its libraries | Godot Engine and others | see `addons/webrtc_native/LICENSE.*` | desktop builds only (not in the web build) |
 | Noto Sans Thai, Noto Sans Symbols | The Noto Project Authors | SIL Open Font License 1.1 (`assets/fonts/OFL.txt`) | `assets/fonts/` |
