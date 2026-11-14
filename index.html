@@ -269,11 +269,16 @@ body {
 // browser stretches it over the page. RenderScale (scripts/ui/render_scale.gd)
 // moves the level: down when frames come late and the lower one helps, up
 // after a smooth stretch. ?res=full|1440|1080|900|720 fixes it (no adapting).
+// A phone (a coarse pointer) never goes above 900 lines (TOP_TOUCH): at its 3x
+// the screen's own pixels made four screen-sized buffers of 12 MB each, and an
+// iPhone's Safari kills a tab short of memory (2026-11-14).
 window.uswRender = (function () {
 	const LEVELS = [0, 1440, 1080, 900, 720]; // 0 = the screen's own pixels
 	const KEY = 'usw_res';
 	const NAMES = {full: 0, native: 0, 1440: 1, 1080: 2, 900: 3, 720: 4};
 	const touch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+	const TOP_TOUCH = 3;
+	const top = touch ? TOP_TOUCH : 0; // the highest resolution allowed (the lowest level)
 	let level = touch ? 3 : 2;
 	let forced = false;
 	const asked = new URLSearchParams(location.search).get('res');
@@ -283,7 +288,7 @@ window.uswRender = (function () {
 	} else {
 		try {
 			const saved = parseInt(localStorage.getItem(KEY), 10);
-			if (saved >= 0 && saved < LEVELS.length) level = saved;
+			if (saved >= 0 && saved < LEVELS.length) level = Math.max(saved, top);
 		} catch (e) {}
 	}
 	let last = 1;
@@ -296,13 +301,13 @@ window.uswRender = (function () {
 			return (last = Math.min(dpr, Math.sqrt(lines * lines * 16 / 9 / area)));
 		},
 		set(i) {
-			if (forced || i < 0 || i >= LEVELS.length) return;
+			if (forced || i < top || i >= LEVELS.length) return;
 			level = i;
 			try { localStorage.setItem(KEY, String(i)); } catch (e) {}
 		},
 		info() {
 			const c = document.querySelector('canvas');
-			return JSON.stringify({level: level, forced: forced, lines: LEVELS[level], count: LEVELS.length,
+			return JSON.stringify({level: level, forced: forced, lines: LEVELS[level], count: LEVELS.length, top: top,
 				dpr: window.devicePixelRatio || 1, ratio: last, canvas: c ? [c.width, c.height] : [0, 0]});
 		},
 	};
@@ -310,7 +315,7 @@ window.uswRender = (function () {
 		</script>
 		<script src="index.js"></script>
 		<script>
-const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":103090436,"index.wasm":1508095},"focusCanvas":true,"gdextensionLibs":["libeffekseer.nothreads.wasm"],"godotPoolSize":4};
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":103891660,"index.wasm":1508095},"focusCanvas":true,"gdextensionLibs":["libeffekseer.nothreads.wasm"],"godotPoolSize":4};
 const GODOT_THREADS_ENABLED = false;
 const engine = new Engine(GODOT_CONFIG);
 
