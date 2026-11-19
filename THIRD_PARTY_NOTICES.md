@@ -58,3 +58,10 @@ SOFTWARE.
 
 The netfox licence is the same MIT text with the line
 `Copyright 2023 Gálffy Tamás`; the Effekseer licence with `Copyright (c) 2020 Effekseer`.
+
+## Radial Menu Control
+
+- What: the ring of Twin Core's command wheel (`addons/RadialMenu/`; `scripts/ui/command_wheel.gd` drives it).
+- Source: https://github.com/jesuisse/godot-radial-menu-control (v1.1, commit 9aa8620), unmodified; its demo and docs left out.
+- Licence: MIT, Copyright (c) 2021-2026 Pascal Schuppli (`addons/RadialMenu/LICENSE`).
+- It carries Noto Sans Regular (SIL Open Font License 1.1, `addons/RadialMenu/Noto-Sans-OFL.txt`) for its default theme.
